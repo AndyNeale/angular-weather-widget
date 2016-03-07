@@ -2,6 +2,26 @@
 
 A sample project illustrating how to use AngularJS directives to add a self-contained weather widget to an existing web page.
 
+## Running the examples
+
+You'll need to run a basic local web server to run the examples.
+
+If you're running Node.js locally, this is as simple as:
+
+```
+npm install http-server -g
+cd v1-basic
+http-server
+```
+
+Then browse to http://127.0.0.1:8080 and watch the magic unfold!
+
+Note that http-server uses port 8080 by default, if this is already in use then you can simply specify another port:
+
+```
+http-server -p 8081
+```
+
 ## Version 1: Basic
 
 The first attempt shows how we can add a widget to a page with a minimum of impact. Adding the widget involves three changes:
