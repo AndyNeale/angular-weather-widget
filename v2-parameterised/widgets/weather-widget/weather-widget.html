@@ -1,0 +1,9 @@
+<div class="weatherWidgetContainer">
+	<div ng-transclude></div>
+	<div class="weatherWidgetList" ng-repeat="location in weatherWidget.locations">
+		<h1 class="weatherWidgetLocation">{{ location.city }}</h1>
+		<p class="weatherWidgetSummary">{{ location.summary }}</p>
+		<p class="weatherWidgetTemperature">{{ location.temperature }}&deg; <img ng-src="{{ location.icon }}" /></p>
+	</div>
+	<div class="weatherWidgetCredits">Weather data from World Weather Online <a href="http://www.worldweatheronline.com" target="_blank">http://www.worldweatheronline.com</a></div>
+</div>
