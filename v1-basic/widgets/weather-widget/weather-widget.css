@@ -1,0 +1,42 @@
+div.weatherWidgetContainer {
+	background: #5c5c5c ;
+	color: white ;
+	padding: 3px ;
+}
+
+div.weatherWidgetList {
+	padding: 10px ;
+	border-bottom: 1px solid white ;
+}
+
+div.weatherWidgetList h1.weatherWidgetLocation {
+	font-size: 2em ;
+	color: #d28979 ;
+	margin: 0 ;
+	padding: 0 ;
+}
+
+div.weatherWidgetList p.weatherWidgetSummary {
+	color: #ffda6b ;
+}
+
+div.weatherWidgetList p.weatherWidgetTemperature {
+	color: #ffffff ;
+	float: right ;
+	font-size: 2em ;
+	margin-top: -68px ;
+}
+
+div.weatherWidgetList p.weatherWidgetIcon {
+	float: right ;
+}
+
+div.weatherWidgetCredits {
+	font-size: 80% ;
+	padding: 0 10px ;
+	text-align: right ;
+}
+
+div.weatherWidgetContainer a {
+	color: #ffda6b ;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>AngularJS Weather Widget v1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/custom.css" rel="stylesheet" media="screen" />
+<link href="widgets/weather-widget/weather-widget.css" rel="stylesheet" media="screen" /> <!-- WIDGET -->
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h1>AngularJS Weather Widget</h1>
+
+<h2>Version 1: Basic</h2>
+
+<p>This initial version of the widget illustrates how a self-contained AngularJS widget can be added to an existing web page.</p>
+<p>The only integration points are:</p>
+<ul>
+	<li>A link to the widget's stylesheet in the page head.</li>
+	<li>Some simple HTML that bootstraps the AngularJS widget at the required place on the page.</li>
+	<li>Two script tags to include the core AngularJS library and the widget code itself.</li>
+</ul>
+
+<h2>Weather</h2> <!-- WIDGET -->
+<div class="weatherWidget" ng-app="weatherWidget" ng-controller="weatherController"> <!-- WIDGET -->
+	<div weather-widget>Loading...</div> <!-- WIDGET -->
+</div> <!-- WIDGET -->
+
+</div> <!-- col -->
+
+<div class="col-md-6">
+
+<h1>Future Plans</h1>
+
+<h2>Version 2: Parameterised</h2>
+
+<p>In this version of the widget, the locations for which we are displaying the weather are hard-coded in the widget code.</p>
+<p>For the next version, we would like to allow these locations to be specified in the HTML template.</p>
+
+</div> <!-- col -->
+
+</div> <!-- row -->
+
+</div> <!-- container -->
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script> <!-- WIDGET -->
+<script src="widgets/weather-widget/weather-widget.js"></script> <!-- WIDGET -->
+
+</body>
+
+</html>
+
