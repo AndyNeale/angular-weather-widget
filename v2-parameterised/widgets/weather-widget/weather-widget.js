@@ -34,7 +34,7 @@ weatherWidget.factory( 'weatherService', function( $http, $q ) {
 
 // Define controller to fetch weather data for required locations
 
-weatherWidget.controller( 'weatherController', function( $scope, weatherService ) {
+weatherWidget.controller( 'weatherController', function( weatherService ) {
 
 	var self = this ;
 
