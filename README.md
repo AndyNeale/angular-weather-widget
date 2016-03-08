@@ -131,3 +131,71 @@ The directive template is largely unchanged from before. It includes
 ```
 
 which allows the rendering process to inject content into the relevant location, and the **ng-repeat** loop references **weatherWidget.locations** because we have exposed this data to the template via the **controllerAs** setting in the widget directive definition.
+
+# API Data Structure
+
+Data returned from the World Weather Online API looks like this:
+
+```
+{
+  "current_condition": [
+    {
+      "cloudcover": "50",
+      "humidity": "71",
+      "observation_time": "05:04 PM",
+      "precipMM": "0.0",
+      "pressure": "1019",
+      "temp_C": "11",
+      "temp_F": "52",
+      "visibility": "16",
+      "weatherCode": "116",
+      "weatherDesc": [
+        {
+          "value": "Partly Cloudy"
+        }
+      ],
+      "weatherIconUrl": [
+        {
+          "value": "http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
+        }
+      ],
+      "winddir16Point": "SSE",
+      "winddirDegree": "160",
+      "windspeedKmph": "7",
+      "windspeedMiles": "4"
+    }
+  ],
+  "request": [
+    {
+      "query": "San Francisco, United States of America",
+      "type": "City"
+    }
+  ],
+  "weather": [
+    {
+      "date": "2016-03-08",
+      "precipMM": "0.2",
+      "tempMaxC": "12",
+      "tempMaxF": "53",
+      "tempMinC": "10",
+      "tempMinF": "50",
+      "weatherCode":"113",
+      "weatherDesc": [
+        {
+          "value": "Sunny"
+        }
+      ],
+      "weatherIconUrl": [
+        {
+          "value": "http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+        }
+      ],
+      "winddir16Point": "WNW",
+      "winddirDegree": "289",
+      "winddirection": "WNW",
+      "windspeedKmph": "22",
+      "windspeedMiles": "14"
+    }
+  ]
+}
+```
