@@ -1,13 +1,9 @@
 // Application
 // =============================================================================
 
-// Define module and dependencies
-
-var weatherWidget = angular.module( 'weatherWidget', [] ) ;
-
 // Define service to fetch weather data from external API
 
-weatherWidget.factory( 'weatherService', function( $http, $q ) {
+var weatherService = function( $http, $q ) {
 
 	return {
 		getWeather: function( location ) {
@@ -30,11 +26,11 @@ weatherWidget.factory( 'weatherService', function( $http, $q ) {
 		}
 	} ;
 
-} ) ;
+} ;
 
-// Define controller to fetch weather data for required locations
+// Define controller that allows locations to be managed
 
-weatherWidget.controller( 'weatherController', function( weatherService ) {
+var weatherController = function( weatherService ) {
 
 	var self = this ;
 
@@ -51,11 +47,11 @@ weatherWidget.controller( 'weatherController', function( weatherService ) {
 		} ) ;
 	} ;
 
-} ) ;
+} ;
 
 // Define directives
 
-weatherWidget.directive( 'weatherWidget', function() {
+var weatherDirective = function() {
 
 	return {
 		restrict: 'AE',
@@ -68,9 +64,9 @@ weatherWidget.directive( 'weatherWidget', function() {
 		controller: 'weatherController',
 	} ;
 
-} ) ;
+} ;
 
-weatherWidget.directive( 'weatherLocation', function() {
+var weatherLocation = function() {
 
 	return {
 		restrict: 'AE',
@@ -82,4 +78,13 @@ weatherWidget.directive( 'weatherLocation', function() {
 		}
 	} ;
 
-} ) ;
+} ;
+
+
+// Define Angular module and components
+
+var weatherWidget = angular.module( 'weatherWidget', [] ) ;
+weatherWidget.factory( 'weatherService', weatherService ) ;
+weatherWidget.controller( 'weatherController', weatherController ) ;
+weatherWidget.directive( 'weatherWidget', weatherDirective ) ;
+weatherWidget.directive( 'weatherLocation', weatherLocation ) ;
