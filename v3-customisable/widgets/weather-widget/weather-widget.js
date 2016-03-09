@@ -34,7 +34,7 @@ var weatherController = function( weatherService ) {
 
 	var self = this ;
 
-	self.editMode = false ;
+	self.editMode = true ; // Change back to false when finished writing edit form
 	self.locations = [] ;
 
 	self.addLocation = function( name, location ) {
@@ -48,8 +48,30 @@ var weatherController = function( weatherService ) {
 		} ) ;
 	} ;
 
-	self.removeLocation = function( location ) {
-		self.locations.splice( location, 1 ) ;
+	self.removeLocation = function( id ) {
+		self.locations.splice( id, 1 ) ;
+	} ;
+
+	self.createLocation = function() {
+		console.log( 'Adding location ' + self.newLocation + '...' ) ;
+		self.addLocation( self.newLocation, self.newLocation ) ;
+		self.newLocation = '' ;
+	} ;
+
+	self.moveLocationUp = function( id ) {
+		if ( id === 0 ) return ;
+		swapArrayElements( id, id - 1 ) ;
+	} ;
+
+	self.moveLocationDown = function( id ) {
+		if ( id === self.locations.length -1 ) return ;
+		swapArrayElements( id, id + 1 ) ;
+	} ;
+
+	var swapArrayElements = function( x, y ) {
+		var tmp = self.locations[ x ] ;
+		self.locations[ x ] = self.locations[ y ] ;
+		self.locations[ y ] = tmp ;
 	} ;
 
 } ;

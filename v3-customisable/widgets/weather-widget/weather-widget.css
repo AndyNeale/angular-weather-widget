@@ -1,5 +1,5 @@
 div.weatherWidgetContainer {
-	background: #5c5c5c ;
+	background: #5C5C5C ;
 	color: white ;
 	padding: 3px ;
 }
@@ -11,23 +11,23 @@ div.weatherWidgetList {
 
 div.weatherWidgetList h1.weatherWidgetLocation {
 	font-size: 2em ;
-	color: #d28979 ;
+	color: #D28979 ;
 	margin: 0 ;
 	padding: 0 ;
 }
 
 div.weatherWidgetList p.weatherWidgetSummary {
-	color: #ffda6b ;
+	color: #FFDA6B ;
 }
 
 div.weatherWidgetList p.weatherWidgetTemperature {
-	color: #ffffff ;
+	color: #FFF ;
 	float: right ;
 	font-size: 2em ;
 	margin-top: -64px ;
 }
 
-div.weatherWidgetList p.weatherWidgetIcon {
+div.weatherWidgetList p.weatherWidgetIcon, div.weatherWidgetList p.weatherWidgetMove {
 	float: right ;
 }
 
@@ -38,5 +38,30 @@ div.weatherWidgetFooter {
 }
 
 div.weatherWidgetContainer a {
-	color: #ffda6b ;
+	color: #FFDA6B ;
+}
+
+p.weatherWidgetRemove {
+	float: left ;
+	height: 100% ;
+	padding-right: 10px ;
+	font-size: 1.3em ;
+}
+
+div.weatherWidgetAdd {
+	padding: 10px ;
+	border-bottom: 1px solid white ;
+}
+
+div.weatherWidgetAdd > form > input {
+	color: #000 ;
+	padding: 5px ;
+	min-width: 80% ;
+}
+
+div.weatherWidgetAdd > form > button {
+	color: #FFF ;
+	background-color: #00A633 ;
+	padding: 5px 20px ;
+	border: 1px solid #CCC ;
 }
