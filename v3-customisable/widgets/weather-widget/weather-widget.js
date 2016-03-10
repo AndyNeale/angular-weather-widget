@@ -38,13 +38,17 @@ var weatherController = function( weatherService ) {
 	self.locations = [] ;
 
 	self.addLocation = function( name, location ) {
-		weatherService.getWeather( location )
-		.then( function( data ) {
-			data.city = name ;
-			self.locations.push( data ) ;
-		} )
-		.catch( function( error ) {
-			console.log( 'Controller error ' + error ) ;
+		return new Promise( function( resolve, reject ) {
+			weatherService.getWeather( location )
+			.then( function( data ) {
+				data.city = name ;
+				self.locations.push( data ) ;
+				resolve() ;
+			} )
+			.catch( function( error ) {
+				console.log( 'Controller error ' + error ) ;
+				reject() ;
+			} ) ;
 		} ) ;
 	} ;
 
@@ -54,8 +58,14 @@ var weatherController = function( weatherService ) {
 
 	self.createLocation = function() {
 		console.log( 'Adding location ' + self.newLocation + '...' ) ;
-		self.addLocation( self.newLocation, self.newLocation ) ;
-		self.newLocation = '' ;
+		// TODO - need to work out how to get name and location data separately
+		self.addLocation( self.newLocation, self.newLocation )
+		.then( function( result ) {
+			self.newLocation = '' ;
+		} )
+		.catch( function( error ) {
+			console.log( 'Ooh gosh something gone wrong' ) ;
+		} ) ;
 	} ;
 
 	self.moveLocationUp = function( id ) {
