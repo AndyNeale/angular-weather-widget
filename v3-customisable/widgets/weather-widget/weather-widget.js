@@ -60,18 +60,23 @@ var weatherController = function( weatherService ) {
 
 	self.moveLocationUp = function( id ) {
 		if ( id === 0 ) return ;
-		swapArrayElements( id, id - 1 ) ;
+		self.locations = swapArrayElements( self.locations, id, id - 1 ) ;
 	} ;
 
 	self.moveLocationDown = function( id ) {
 		if ( id === self.locations.length -1 ) return ;
-		swapArrayElements( id, id + 1 ) ;
+		self.locations = swapArrayElements( self.locations, id, id + 1 ) ;
 	} ;
 
-	var swapArrayElements = function( x, y ) {
-		var tmp = self.locations[ x ] ;
-		self.locations[ x ] = self.locations[ y ] ;
-		self.locations[ y ] = tmp ;
+	var swapArrayElements = function( arr, x, y ) {
+		// Clone original array to avoid this function having side-effects
+		var res = arr.slice( 0 ) ;
+		// Swap the two specified elements
+		var tmp = res[ x ] ;
+		res[ x ] = res[ y ] ;
+		res[ y ] = tmp ;
+		// Return the updated array WITHOUT touching the original
+		return res ;
 	} ;
 
 } ;
