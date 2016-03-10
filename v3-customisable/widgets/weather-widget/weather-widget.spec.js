@@ -19,7 +19,7 @@ describe( 'weatherWidget', function() {
 			expect( controller.locations.length ).toBe( 0 ) ;
 		} ) ;
 
-		it( 'addLocation should extend the locations array', function() {
+		it( 'addLocation should lengthen the locations array', function() {
 			controller.addLocation( mockLocation.name, mockLocation.data )
 			.then( function( result ) {
 				expect( controller.locations.length ).toBe( 1 ) ;
@@ -27,6 +27,11 @@ describe( 'weatherWidget', function() {
 			.catch( function( error ) {
 				fail( 'Error adding location ' + error ) ;
 			} ) ;
+		} ) ;
+
+		it( 'removeLocation should shorten the locations array', function() {
+			controller.removeLocation( 0 ) ;
+			expect( controller.locations.length ).toBe( 0 ) ;
 		} ) ;
 
 	} ) ;
