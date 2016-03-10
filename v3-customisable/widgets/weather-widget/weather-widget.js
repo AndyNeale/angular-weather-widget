@@ -37,6 +37,9 @@ var weatherController = function( weatherService ) {
 	self.editMode = true ; // Change back to false when finished writing edit form
 	self.locations = [] ;
 
+	// TODO - refactor as pure function, accept array as additional input parameter, return extended array
+	// TODO - add error handling e.g. name must be string, location must be object with relevant properties
+	// TODO - move weather service call to separate function e.g. findLocation
 	self.addLocation = function( name, location ) {
 		return new Promise( function( resolve, reject ) {
 			weatherService.getWeather( location )
@@ -52,6 +55,8 @@ var weatherController = function( weatherService ) {
 		} ) ;
 	} ;
 
+	// TODO - refactor as pure function, accept array as additional input parameter, return shortened array
+	// TODO - add error handling e.g. non-numeric id, attempt to remove element beyond end of array
 	self.removeLocation = function( id ) {
 		self.locations.splice( id, 1 ) ;
 	} ;
