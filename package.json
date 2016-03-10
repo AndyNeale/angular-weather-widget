@@ -1,0 +1,26 @@
+{
+  "name": "angular-weather-widget",
+  "version": "1.0.0",
+  "description": "AngularJS weather widget",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyNeale/angular-weather-widget.git"
+  },
+  "author": "Andy Neale <andy@andyneale.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AndyNeale/angular-weather-widget/issues"
+  },
+  "homepage": "https://github.com/AndyNeale/angular-weather-widget#readme"
+}
